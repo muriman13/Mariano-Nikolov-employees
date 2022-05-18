@@ -5,7 +5,6 @@ import org.apache.commons.lang3.time.DateUtils;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
@@ -88,13 +87,14 @@ public class Calculate  {
         FileRead fileRead = new FileRead();
         List<Project> projectsList = fileRead.getRecordFromLine(path);
         Project[] test = new Project[projectsList.size()];
-        //converting ArrayList to array. Note that we could of used - test = projectsList.stream().toArray();
+        //converting ArrayList to array. Note that we could have used - test = projectsList.stream().toArray();
         for (int i = 0; i < test.length; i++) {
             test[i] = projectsList.get(i);
         }
         //sorting by projectId
         Arrays.sort(test, Comparator.comparing(Project::getProjects));
-        //checks if 2 people have worked on common project, and if so, for how long
+        //checks if 2 people have worked on common project, and if so, for how long. it checks if in the sorted (by projectId) array the next element  is with the same projectId
+        //then it checks if the end date of one of them isn't before the start date of the other one and vise versa, then it calculates the difference in days
         for (int i = 0; i < test.length - 1; i++) {
             if (test[i].getEmpID() != test[i + 1].getEmpID() && test[i].getProjects() == test[i + 1].getProjects() && this.convertToDate(test[i].getDateTo()).after(this.convertToDate(test[i + 1].getDateFrom()))) {
                 if (this.convertToDate(test[i].getDateFrom()).after(this.convertToDate(test[i + 1].getDateFrom()))) {

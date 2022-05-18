@@ -6,7 +6,7 @@ import models.Project;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
-
+// reading from a csv file using opencsv
 public class FileRead {
 
     public List<Project> getRecordFromLine(String path) throws FileNotFoundException {

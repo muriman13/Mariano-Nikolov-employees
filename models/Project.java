@@ -3,6 +3,7 @@ package models;
 import com.opencsv.bean.CsvBindByPosition;
 //the model
 public class Project {
+    //anotations used by opecsv
     @CsvBindByPosition(position = 0)
     private int EmpID;
     @CsvBindByPosition(position = 1)
