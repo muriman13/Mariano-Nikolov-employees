@@ -1,7 +1,6 @@
 package GUI;
 
 import services.Calculate;
-import services.FileRead;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +54,7 @@ public class MyFrame extends JFrame implements ActionListener {
                     ex.printStackTrace();
                 }
                 try {
-                    new JTableExamples(calculate.bullshit(file.toString()));
+                    new JTableExamples(calculate.getEmployees(file.toString()));
 
 
                 } catch (FileNotFoundException ex) {

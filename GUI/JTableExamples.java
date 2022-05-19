@@ -30,8 +30,6 @@ public class JTableExamples {
             }
 
 
-
-
             // Column Names
             String[] columnNames = { "EMployee 1 ID","EMployee 2 ID","Project ID","days worked together"};
 

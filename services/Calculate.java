@@ -77,7 +77,7 @@ public class Calculate  {
         return date1;
     }
 
-    public ArrayList<String[]> bullshit(String path) throws FileNotFoundException, ParseException {
+    public ArrayList<String[]> getEmployees(String path) throws FileNotFoundException, ParseException {
         String []result = new String[4];// simple string array to  add to allProjects, we use array because we know the prefixed size
         ArrayList<String[]> allProjects = new ArrayList<String[]>();
         allProjects.add(new String[]{"", "", "", ""});// generating 0 index element with empty strings in ArrayList that is later just set
