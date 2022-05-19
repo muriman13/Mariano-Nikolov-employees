@@ -30,14 +30,7 @@ public class JTableExamples {
             }
 
 
-//                        {
-//                            obj.get(0)[0], obj.get(0)[1], obj.get(0)[2], obj.get(0)[3]
-//                        },
-//                    {
-//                            obj.get(1)[0], obj.get(1)[1], obj.get(1)[2], obj.get(1)[3]
-//                    }
-//
-//                    };
+
 
             // Column Names
             String[] columnNames = { "EMployee 1 ID","EMployee 2 ID","Project ID","days worked together"};
